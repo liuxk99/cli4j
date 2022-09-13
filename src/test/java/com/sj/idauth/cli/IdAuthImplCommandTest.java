@@ -1,16 +1,17 @@
 package com.sj.idauth.cli;
 
+import com.sj.idauth.core.IdAuthFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
 
-class IdAuthCommandTest {
+class IdAuthImplCommandTest {
     private CommandLine cli;
 
     @BeforeEach
     void setUp() {
-        cli = new CommandLine(new IdAuthCommand());
+        cli = new CommandLine(new IdAuthCommand(IdAuthFactory.getProduct()));
     }
 
     @AfterEach
